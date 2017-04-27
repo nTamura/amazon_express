@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<a href="/products">Back to products list</a>
+<%# this whole page assumes that question params has been passed through the router %>
+
+<h1><%= product.title %></h1>
+<p><%= product.description %></p>
+<p><em>Created at: <%= product.createdAt %></em></p>
+
+
+<%- include('../partials/footer') %>

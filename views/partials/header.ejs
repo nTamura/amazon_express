@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Express V2</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+         <div class="col s12 m12 l12">
+            <nav class="navbar navbar-default navbar-left">
+               <div class="nav-wrapper">
+                  <a href="#" class="brand-logo center">POS.io</a>
+
+                    <p class="navbar-text pull-right">
+                    <% if user_signed_in? %>
+                      Logged in as <strong><%= current_user.email %></strong>.
+                      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                      <% else %>
+                      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                    <% end %>
+                  </p>
+
+                </div>
+             </nav>
+           </div>
+         </div>
+    </div>
